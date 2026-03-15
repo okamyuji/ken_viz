@@ -37,8 +37,9 @@ class ParserFactory {
   /// 結果が良好ならそれを採用。不十分なら通常パースにフォールバック。
   ParsedCheckupResult parse(OcrTextResult ocrResult) {
     // 1. 空間マッチングを試行（バウンディングボックスがある場合）
-    final hasBoundingBoxes = ocrResult.blocks
-        .any((b) => b.lines.any((l) => l.boundingBox != null));
+    final hasBoundingBoxes = ocrResult.blocks.any(
+      (b) => b.lines.any((l) => l.boundingBox != null),
+    );
 
     if (hasBoundingBoxes) {
       final spatialMatcher = SpatialItemMatcher(_masters);

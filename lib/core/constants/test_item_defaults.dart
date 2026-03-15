@@ -25,12 +25,7 @@ const defaultCategories = [
   ),
   TestCategory(id: 'kidney', name: '腎機能', displayOrder: 7, iconName: 'water'),
   TestCategory(id: 'urine', name: '尿検査', displayOrder: 8, iconName: 'biotech'),
-  TestCategory(
-    id: 'eye',
-    name: '眼科',
-    displayOrder: 9,
-    iconName: 'visibility',
-  ),
+  TestCategory(id: 'eye', name: '眼科', displayOrder: 9, iconName: 'visibility'),
   TestCategory(
     id: 'hearing',
     name: '聴力',

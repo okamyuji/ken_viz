@@ -33,8 +33,8 @@ class _LockPageState extends State<LockPage> {
     });
 
     try {
-      final canAuth = await _auth.canCheckBiometrics ||
-          await _auth.isDeviceSupported();
+      final canAuth =
+          await _auth.canCheckBiometrics || await _auth.isDeviceSupported();
       if (!canAuth) {
         // 生体認証非対応の端末はそのまま解除
         if (mounted) widget.onUnlocked();
@@ -43,9 +43,7 @@ class _LockPageState extends State<LockPage> {
 
       final authenticated = await _auth.authenticate(
         localizedReason: '健診データにアクセスするには認証が必要です',
-        options: const AuthenticationOptions(
-          stickyAuth: true,
-        ),
+        options: const AuthenticationOptions(stickyAuth: true),
       );
 
       if (!mounted) return;

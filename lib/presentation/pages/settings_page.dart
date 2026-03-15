@@ -37,13 +37,13 @@ class _SettingsPageState extends ConsumerState<SettingsPage> {
       // ONにする前に生体認証が使えるか確認
       final auth = LocalAuthentication();
       try {
-        final canAuth = await auth.canCheckBiometrics ||
-            await auth.isDeviceSupported();
+        final canAuth =
+            await auth.canCheckBiometrics || await auth.isDeviceSupported();
         if (!canAuth) {
           if (!mounted) return;
-          ScaffoldMessenger.of(context).showSnackBar(
-            const SnackBar(content: Text('この端末では生体認証が利用できません')),
-          );
+          ScaffoldMessenger.of(
+            context,
+          ).showSnackBar(const SnackBar(content: Text('この端末では生体認証が利用できません')));
           return;
         }
         // 実際に認証して本人確認
@@ -53,9 +53,9 @@ class _SettingsPageState extends ConsumerState<SettingsPage> {
         if (!authenticated) return;
       } on PlatformException catch (e) {
         if (!mounted) return;
-        ScaffoldMessenger.of(context).showSnackBar(
-          SnackBar(content: Text('認証エラー: ${e.message}')),
-        );
+        ScaffoldMessenger.of(
+          context,
+        ).showSnackBar(SnackBar(content: Text('認証エラー: ${e.message}')));
         return;
       }
     }

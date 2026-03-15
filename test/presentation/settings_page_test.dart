@@ -90,10 +90,7 @@ void main() {
       await tester.tap(find.text('全データ削除'));
       await tester.pumpAndSettle();
 
-      expect(
-        find.text('すべての健診データを削除します。\nこの操作は取り消せません。'),
-        findsOneWidget,
-      );
+      expect(find.text('すべての健診データを削除します。\nこの操作は取り消せません。'), findsOneWidget);
       expect(find.text('キャンセル'), findsOneWidget);
       expect(find.text('削除'), findsOneWidget);
     });

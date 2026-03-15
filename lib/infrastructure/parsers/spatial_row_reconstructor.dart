@@ -27,10 +27,9 @@ class SpatialItemMatcher {
     for (final block in ocrResult.blocks) {
       for (final line in block.lines) {
         if (line.boundingBox != null) {
-          allLines.add(_PositionedLine(
-            text: line.text,
-            box: line.boundingBox!,
-          ));
+          allLines.add(
+            _PositionedLine(text: line.text, box: line.boundingBox!),
+          );
         }
       }
     }
@@ -48,10 +47,7 @@ class SpatialItemMatcher {
       final normalized = TextNormalizer.normalize(line.text);
       final result = matcher.match(normalized);
       if (result != null && result.confidence >= 0.6) {
-        itemLines.add(_MatchedItemLine(
-          line: line,
-          matchResult: result,
-        ));
+        itemLines.add(_MatchedItemLine(line: line, matchResult: result));
       }
     }
 
@@ -61,11 +57,7 @@ class SpatialItemMatcher {
       final text = TextNormalizer.toHalfWidth(line.text).trim();
       final num = _extractNumber(text);
       if (num != null) {
-        numericLines.add(_NumericLine(
-          line: line,
-          value: num,
-          rawText: text,
-        ));
+        numericLines.add(_NumericLine(line: line, value: num, rawText: text));
       }
     }
 
@@ -126,26 +118,28 @@ class SpatialItemMatcher {
         }
       }
 
-      rows.add(ParsedResultRow(
-        itemName: ParsedField(
-          value: item.matchResult.item.standardName,
-          confidence: ConfidenceScore(item.matchResult.confidence),
-          rawText: item.line.text,
+      rows.add(
+        ParsedResultRow(
+          itemName: ParsedField(
+            value: item.matchResult.item.standardName,
+            confidence: ConfidenceScore(item.matchResult.confidence),
+            rawText: item.line.text,
+          ),
+          matchedItemCode: item.matchResult.item.id,
+          value: ParsedField(
+            value: bestMatch.value,
+            confidence: ConfidenceScore(valueConf),
+            rawText: bestMatch.rawText,
+          ),
+          unit: ParsedField(
+            value: unit ?? item.matchResult.item.unit ?? '',
+            confidence: ConfidenceScore(unit != null ? 0.9 : 0.7),
+          ),
+          overallConfidence: ConfidenceScore(
+            (item.matchResult.confidence + valueConf) / 2,
+          ),
         ),
-        matchedItemCode: item.matchResult.item.id,
-        value: ParsedField(
-          value: bestMatch.value,
-          confidence: ConfidenceScore(valueConf),
-          rawText: bestMatch.rawText,
-        ),
-        unit: ParsedField(
-          value: unit ?? item.matchResult.item.unit ?? '',
-          confidence: ConfidenceScore(unit != null ? 0.9 : 0.7),
-        ),
-        overallConfidence: ConfidenceScore(
-          (item.matchResult.confidence + valueConf) / 2,
-        ),
-      ));
+      );
     }
 
     // 同一itemCodeの重複を除去（最初に見つかったもの＝今回の値を採用）
@@ -168,7 +162,9 @@ class SpatialItemMatcher {
       overallConfidence: ConfidenceScore(
         deduped.isEmpty
             ? 0.0
-            : deduped.map((r) => r.overallConfidence.value).reduce((a, b) => a + b) /
+            : deduped
+                      .map((r) => r.overallConfidence.value)
+                      .reduce((a, b) => a + b) /
                   deduped.length,
       ),
     );
