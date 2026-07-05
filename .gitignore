@@ -61,3 +61,6 @@ Thumbs.db
 
 # Documents (binary)
 kenviz-srs.docx
+
+# Xcode export artifacts
+ios/Runner */
