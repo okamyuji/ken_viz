@@ -23,8 +23,10 @@ class AppLockService {
     try {
       return await _auth.authenticate(
         localizedReason: 'KenVizのロックを解除してください',
-        options: const AuthenticationOptions(stickyAuth: true),
+        persistAcrossBackgrounding: true,
       );
+    } on LocalAuthException {
+      return false;
     } on PlatformException {
       return false;
     }

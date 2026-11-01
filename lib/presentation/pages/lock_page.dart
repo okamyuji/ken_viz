@@ -13,6 +13,13 @@ class LockPage extends StatefulWidget {
   State<LockPage> createState() => _LockPageState();
 }
 
+/// 認証の失敗を、ロック画面に出す文言にする
+String authErrorMessage(Exception e) => switch (e) {
+  LocalAuthException(:final description?) => description,
+  PlatformException(:final message?) => message,
+  _ => '認証に失敗しました',
+};
+
 class _LockPageState extends State<LockPage> {
   final _auth = LocalAuthentication();
   String? _error;
@@ -43,7 +50,7 @@ class _LockPageState extends State<LockPage> {
 
       final authenticated = await _auth.authenticate(
         localizedReason: '健診データにアクセスするには認証が必要です',
-        options: const AuthenticationOptions(stickyAuth: true),
+        persistAcrossBackgrounding: true,
       );
 
       if (!mounted) return;
@@ -52,9 +59,9 @@ class _LockPageState extends State<LockPage> {
       } else {
         setState(() => _error = '認証がキャンセルされました');
       }
-    } on PlatformException catch (e) {
+    } on Exception catch (e) {
       if (!mounted) return;
-      setState(() => _error = e.message ?? '認証に失敗しました');
+      setState(() => _error = authErrorMessage(e));
     } finally {
       if (mounted) setState(() => _isAuthenticating = false);
     }
