@@ -11,19 +11,19 @@ dependencies:
     sdk: flutter
 
   # State Management
-  flutter_riverpod: ^3.3.1
+  flutter_riverpod: ^3.4.3
 
   # OCR
-  google_mlkit_text_recognition: ^0.15.1
+  google_mlkit_text_recognition: ^0.17.1
 
   # Camera & Image
-  image_picker: ^1.1.0
-  image: ^4.5.0
+  image_picker: ^1.2.4
+  image: ^4.12.0
 
   # Local DB
-  drift: ^2.32.0
-  sqlite3_flutter_libs: ^0.5.0
-  path_provider: ^2.1.0
+  drift: ^2.34.4
+  sqlite3_flutter_libs: ^0.6.0+eol
+  path_provider: ^2.1.6
 
   # Chart
   fl_chart: ^0.70.2
@@ -42,21 +42,21 @@ dependencies:
   go_router: ^17.1.0
 
   # Settings
-  shared_preferences: ^2.3.0
+  shared_preferences: ^2.5.6
 
   # Utilities
-  uuid: ^4.5.0
-  intl: ^0.20.2
+  uuid: ^4.6.0
+  intl: ^0.20.3
   collection: ^1.18.0
   freezed_annotation: ^3.0.0
-  json_annotation: ^4.11.0
+  json_annotation: ^4.12.0
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
 
   # Code Generation
-  build_runner: ^2.4.0
+  build_runner: ^2.15.1
   freezed: ^3.2.5
   json_serializable: ^6.13.0
   drift_dev: ^2.22.0
@@ -65,7 +65,7 @@ dev_dependencies:
   flutter_lints: ^5.0.0
 
   # Testing
-  mockito: ^5.4.0
+  mockito: ^5.6.4
 
 flutter:
   uses-material-design: true

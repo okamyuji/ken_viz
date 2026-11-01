@@ -37,7 +37,7 @@ make coverage   # カバレッジレポート
 
 | レイヤー | 技術 |
 |---|---|
-| UI | Flutter 3.41.x |
+| UI | Flutter 3.47.x |
 | 状態管理 | Riverpod 3.x |
 | OCR | google_mlkit_text_recognition |
 | ローカルDB | Isar 3.x |
