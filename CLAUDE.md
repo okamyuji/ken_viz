@@ -22,7 +22,7 @@ KenViz（健Viz）は、健康診断結果をスマートフォンのカメラ�
 
 | 技術 | バージョン | 用途 |
 | --- | --------- | --- |
-| Flutter | 3.41.2 (fvm固定) | UIフレームワーク |
+| Flutter | 3.47.9 (fvm固定) | UIフレームワーク |
 | flutter_riverpod | ^3.3.1 | 状態管理（Provider直接利用、コード生成なし） |
 | Drift + sqlite3_flutter_libs | ^2.32.0 | ローカルDB（Isarから移行済み） |
 | google_mlkit_text_recognition | ^0.15.1 | オンデバイスOCR（日本語対応） |
