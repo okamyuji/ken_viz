@@ -23,6 +23,6 @@ class ShareChartUseCase {
     final file = File('${dir.path}/$fileName.png');
     await file.writeAsBytes(byteData.buffer.asUint8List());
 
-    await Share.shareXFiles([XFile(file.path)]);
+    await SharePlus.instance.share(ShareParams(files: [XFile(file.path)]));
   }
 }

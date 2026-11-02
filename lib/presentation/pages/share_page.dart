@@ -29,7 +29,7 @@ class _SharePageState extends ConsumerState<SharePage> {
       );
       final path = await useCase.execute(widget.checkupId);
 
-      await Share.shareXFiles([XFile(path)]);
+      await SharePlus.instance.share(ShareParams(files: [XFile(path)]));
     } on Exception catch (e) {
       if (!mounted) return;
       ScaffoldMessenger.of(
