@@ -249,7 +249,7 @@ class _OcrConfirmPageState extends ConsumerState<OcrConfirmPage> {
           : ListView.separated(
               padding: const EdgeInsets.all(16),
               itemCount: _rows.length,
-              separatorBuilder: (_, __) => const Divider(),
+              separatorBuilder: (_, _) => const Divider(),
               itemBuilder: (context, index) {
                 final row = _rows[index];
                 final isLowConf = row.confidence < 0.7;
