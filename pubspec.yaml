@@ -11,7 +11,7 @@ dependencies:
     sdk: flutter
 
   # State Management
-  flutter_riverpod: ^3.4.3
+  flutter_riverpod: ^3.5.0
 
   # OCR
   google_mlkit_text_recognition: ^0.17.1
