@@ -149,7 +149,7 @@ lib/
 ```bash
 fvm dart format .                # フォーマット
 fvm flutter analyze              # 静的解析（strict mode）
-fvm flutter test                 # テスト（現在124ケース）
+fvm flutter test                 # テスト
 ```
 
 IPAビルド（コード署名付き）:
@@ -166,7 +166,7 @@ fvm flutter build ipa --export-method development
 - 日本語コメントで意図を記述
 - itemCodeは必ずItemMatcher経由でマスタIDに正規化すること（OCR/手動入力共通）
 
-### テスト（124ケース）
+### テスト
 
 | ファイル | テスト内容 |
 | ------- | --- |
@@ -175,24 +175,15 @@ fvm flutter build ipa --export-method development
 | `test/infrastructure/parsers/item_matcher_test.dart` | 3段階マッチング、表記揺れ14パターン |
 | `test/infrastructure/parsers/table_vertical_parser_test.dart` | 各種区切り、全角数字、16項目総合 |
 | `test/infrastructure/repositories/drift_repositories_test.dart` | Drift CRUD操作 |
+| `test/infrastructure/security/app_lock_service_test.dart` | 生体認証の結果、例外時は認証失敗（false）として扱う |
 | `test/presentation/dashboard_page_test.dart` | ダッシュボードWidget |
+| `test/presentation/lock_page_test.dart` | 認証エラーメッセージの選択（`authErrorMessage`） |
 | `test/presentation/manual_input_page_test.dart` | 手動入力Widget |
 | `test/presentation/settings_page_test.dart` | 設定画面Widget |
 
 ---
 
-## 6. 完了済み作業
-
-Sprint 1〜4 は全て完了:
-
-- **Sprint 1** ビルド基盤: fvm, pub get, analyze, test, build 全パス
-- **Sprint 2** DB + Repository: Drift（Isarから変更）スキーマ定義、Repository実装 × 4、マスタデータ投入
-- **Sprint 3** カメラ + OCR統合: ML Kit実装、画像前処理、OCR→パース→確認UI→DB保存の一気通貫フロー
-- **Sprint 4** ダッシュボード + チャート: カテゴリ別サマリー、fl_chart折れ線グラフ（基準範囲バンド付き）、go_router、ボトムナビ
-
----
-
-## 7. 残作業（Phase 1 MVP）
+## 6. 残作業（Phase 1 MVP）
 
 ### 品質改善
 
@@ -200,10 +191,8 @@ Sprint 1〜4 は全て完了:
 - TableHorizontalParser（タイプB）の実装
 - 検査項目マスタのエイリアス拡充（実データでのテスト）
 
-### Sprint 5: セキュリティ + 共有（未着手）
+### セキュリティ + 共有
 
-- `lock_page.dart` — バイオメトリクス/PIN認証UI（サービス層は実装済み）
-- `share_page.dart` — 共有範囲選択、プレビュー、個人情報除外オプション
 - PDF生成の統合テスト
 
 ### その他
@@ -214,7 +203,7 @@ Sprint 1〜4 は全て完了:
 
 ---
 
-## 8. 既知の課題
+## 7. 既知の課題
 
 | 課題 | 対応方針 |
 | ---- | ------ |
@@ -225,7 +214,7 @@ Sprint 1〜4 は全て完了:
 
 ---
 
-## 9. 参照ドキュメント
+## 8. 参照ドキュメント
 
 - `docs/01_requirements.md` — ユースケース詳細、非機能要件、画面構成
 - `docs/02_design.md` — モジュール構成、パーサーフロー、テスト戦略
