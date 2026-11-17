@@ -175,9 +175,9 @@ fvm flutter build ipa --export-method development
 | `test/infrastructure/parsers/item_matcher_test.dart` | 3段階マッチング、表記揺れ14パターン |
 | `test/infrastructure/parsers/table_vertical_parser_test.dart` | 各種区切り、全角数字、16項目総合 |
 | `test/infrastructure/repositories/drift_repositories_test.dart` | Drift CRUD操作 |
-| `test/infrastructure/security/app_lock_service_test.dart` | 生体認証の結果、プラットフォーム例外時の失敗扱いとメッセージ |
+| `test/infrastructure/security/app_lock_service_test.dart` | 生体認証の結果、例外時は認証失敗（false）として扱う |
 | `test/presentation/dashboard_page_test.dart` | ダッシュボードWidget |
-| `test/presentation/lock_page_test.dart` | ロック画面Widget |
+| `test/presentation/lock_page_test.dart` | 認証エラーメッセージの選択（`authErrorMessage`） |
 | `test/presentation/manual_input_page_test.dart` | 手動入力Widget |
 | `test/presentation/settings_page_test.dart` | 設定画面Widget |
 
