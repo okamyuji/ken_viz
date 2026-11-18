@@ -1,18 +1,7 @@
+# pub は対象外にする。Dependabot は CI の固定版より新しい Flutter で pubspec.lock を解き直し、SDK が固定する test_api などをずらして --enforce-lockfile を落とすため。pub の更新は Flutter を上げるときに手で行う
 # 公開から3日未満の版は提案しない（pnpm の minimumReleaseAge と同じ待機）。minor と patch は major と別の PR にまとめ、major で CI が落ちても残りを取り込めるようにする
 version: 2
 updates:
-  - package-ecosystem: pub
-    directories:
-      - "/"
-    schedule:
-      interval: weekly
-    cooldown:
-      default-days: 3
-    groups:
-      minor-and-patch:
-        update-types: [minor, patch]
-      major:
-        update-types: [major]
   - package-ecosystem: gradle
     directories:
       - "/android"
