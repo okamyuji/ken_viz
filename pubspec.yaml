@@ -14,7 +14,7 @@ dependencies:
   flutter_riverpod: ^3.5.0
 
   # OCR
-  google_mlkit_text_recognition: ^0.17.1
+  google_mlkit_text_recognition: ^1.0.3
 
   # Camera & Image
   image_picker: ^1.2.4
