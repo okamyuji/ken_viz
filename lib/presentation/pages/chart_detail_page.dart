@@ -1,9 +1,9 @@
 // チャート詳細ページ [UC-06]
 import 'package:fl_chart/fl_chart.dart';
-import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:kenviz/domain/entities/test_result.dart';
 import 'package:kenviz/presentation/providers/repository_providers.dart';
+import 'package:material_ui/material_ui.dart';
 
 /// 検査項目の経時変化を折れ線グラフで表示するページ
 class ChartDetailPage extends ConsumerWidget {

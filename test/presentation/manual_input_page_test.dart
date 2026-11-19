@@ -1,5 +1,4 @@
 // ManualInputPage Widgetテスト [UC-02]
-import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:kenviz/domain/entities/checkup.dart';
@@ -7,6 +6,7 @@ import 'package:kenviz/domain/entities/test_result.dart';
 import 'package:kenviz/domain/repositories/repositories.dart';
 import 'package:kenviz/presentation/pages/manual_input_page.dart';
 import 'package:kenviz/presentation/providers/repository_providers.dart';
+import 'package:material_ui/material_ui.dart';
 
 class _FakeCheckupRepository implements CheckupRepository {
   final saved = <Checkup>[];

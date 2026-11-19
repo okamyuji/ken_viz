@@ -1,7 +1,7 @@
 // ロック画面 [NFR-SEC-01]
-import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:local_auth/local_auth.dart';
+import 'package:material_ui/material_ui.dart';
 
 /// アプリ起動時の生体認証ロック画面
 class LockPage extends StatefulWidget {

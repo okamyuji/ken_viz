@@ -1,9 +1,9 @@
 // 設定ページ [UC-11]
-import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:kenviz/presentation/providers/repository_providers.dart';
 import 'package:local_auth/local_auth.dart';
+import 'package:material_ui/material_ui.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 const _kAppLockKey = 'app_lock_enabled';
