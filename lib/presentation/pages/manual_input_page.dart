@@ -1,5 +1,4 @@
 // 手動入力ページ [UC-02]
-import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 import 'package:kenviz/core/constants/test_item_defaults.dart';
@@ -7,6 +6,7 @@ import 'package:kenviz/domain/entities/checkup.dart';
 import 'package:kenviz/domain/entities/test_result.dart';
 import 'package:kenviz/infrastructure/parsers/item_matcher.dart';
 import 'package:kenviz/presentation/providers/repository_providers.dart';
+import 'package:material_ui/material_ui.dart';
 import 'package:uuid/uuid.dart';
 
 /// 検査結果の手動入力画面

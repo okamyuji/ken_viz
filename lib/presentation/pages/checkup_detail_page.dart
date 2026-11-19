@@ -1,9 +1,9 @@
 // 健診詳細ページ [UC-05]
-import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 import 'package:kenviz/domain/entities/test_result.dart';
 import 'package:kenviz/presentation/providers/repository_providers.dart';
+import 'package:material_ui/material_ui.dart';
 
 /// 1回の健診の全検査結果を表示するページ
 class CheckupDetailPage extends ConsumerWidget {

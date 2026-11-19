@@ -1,5 +1,4 @@
 // OCR結果 確認・修正ページ [UC-03]
-import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 import 'package:intl/intl.dart';
@@ -10,6 +9,7 @@ import 'package:kenviz/infrastructure/parsers/item_matcher.dart';
 import 'package:kenviz/presentation/providers/dashboard_providers.dart';
 import 'package:kenviz/presentation/providers/ocr_providers.dart';
 import 'package:kenviz/presentation/providers/repository_providers.dart';
+import 'package:material_ui/material_ui.dart';
 import 'package:uuid/uuid.dart';
 
 /// OCR結果の確認・修正画面

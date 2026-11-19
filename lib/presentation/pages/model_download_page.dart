@@ -1,5 +1,5 @@
 // OCRモデル準備ページ
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 
 /// ML Kit モデルのダウンロード/準備中に表示するページ
 class ModelDownloadPage extends StatelessWidget {

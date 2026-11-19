@@ -1,9 +1,9 @@
 // ダッシュボードページ [UC-04]
-import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 import 'package:kenviz/domain/entities/test_result.dart';
 import 'package:kenviz/presentation/providers/dashboard_providers.dart';
+import 'package:material_ui/material_ui.dart';
 
 /// カテゴリ別サマリーを表示するダッシュボード
 class DashboardPage extends ConsumerWidget {

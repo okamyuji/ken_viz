@@ -1,9 +1,9 @@
 // 共有ページ [UC-10, UC-12]
-import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:kenviz/application/services/pdf_generator_service.dart';
 import 'package:kenviz/application/usecases/export_pdf_usecase.dart';
 import 'package:kenviz/presentation/providers/repository_providers.dart';
+import 'package:material_ui/material_ui.dart';
 import 'package:share_plus/share_plus.dart';
 
 /// 健診結果の共有画面

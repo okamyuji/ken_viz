@@ -1,6 +1,6 @@
-import 'package:flutter/material.dart';
 import 'package:kenviz/presentation/pages/lock_page.dart';
 import 'package:kenviz/presentation/router/app_router.dart';
+import 'package:material_ui/material_ui.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 const _kAppLockKey = 'app_lock_enabled';

@@ -1,5 +1,4 @@
 // go_router ルーティング設定
-import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:kenviz/presentation/pages/chart_detail_page.dart';
 import 'package:kenviz/presentation/pages/checkup_detail_page.dart';
@@ -10,6 +9,7 @@ import 'package:kenviz/presentation/pages/ocr_confirm_page.dart';
 import 'package:kenviz/presentation/pages/scan_page.dart';
 import 'package:kenviz/presentation/pages/settings_page.dart';
 import 'package:kenviz/presentation/pages/share_page.dart';
+import 'package:material_ui/material_ui.dart';
 
 final _rootNavigatorKey = GlobalKey<NavigatorState>();
 final _shellNavigatorKey = GlobalKey<NavigatorState>();
